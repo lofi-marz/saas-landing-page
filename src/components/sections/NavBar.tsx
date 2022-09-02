@@ -35,7 +35,7 @@ function NavLinks({ inverted }: { inverted: boolean }) {
 }
 
 export function NavSpacer() {
-    return <div className="absolute top-0 z-10 flex h-20"></div>;
+    return <div className="h-20 w-full"></div>;
 }
 
 export function NavBar() {
@@ -60,7 +60,7 @@ export function NavBar() {
 
     return (
         <motion.nav
-            className="absolute top-0 z-10 flex h-20 w-full items-center justify-between px-4 font-title text-3xl lg:px-12 lg:text-2xl"
+            className="sticky top-0 z-10 flex h-20 w-full items-center justify-between px-4 font-title text-3xl lg:px-12 lg:text-2xl"
             variants={containerVariants}
             animate={[
                 atPageStart ? 'transparent' : 'transparent',
