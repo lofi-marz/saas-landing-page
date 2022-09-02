@@ -1,15 +1,5 @@
 import { useEffect, useState } from 'react';
-
-export type ScreenSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-const sizes: {
-    [k in ScreenSize]: string;
-} = {
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    '2xl': '1536px',
-};
+import { ScreenSize, sizes } from './types';
 
 export const useMediaQuery = (screen: ScreenSize) => {
     const [matches, setMatches] = useState(false);
