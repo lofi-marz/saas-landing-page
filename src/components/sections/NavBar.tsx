@@ -17,19 +17,15 @@ function NavLinks({ inverted }: { inverted: boolean }) {
     return (
         <motion.div
             className={clsx(
-                'flex items-center gap-8 px-4 text-xl transition-all',
+                'flex items-center gap-8 px-4 text-base transition-all',
                 inverted ? 'text-primary' : 'text-white'
             )}>
             <a href="#hero">home</a>
             <a>about us</a>
             <a>contact us</a>
-            <a
-                className={clsx(
-                    'rounded-full px-5 py-2 transition-all',
-                    inverted ? 'bg-primary text-white' : 'bg-white text-primary'
-                )}>
-                order
-            </a>
+            <button className="w-fit bg-white px-6 py-4  text-black">
+                GET STARTED
+            </button>
         </motion.div>
     );
 }
