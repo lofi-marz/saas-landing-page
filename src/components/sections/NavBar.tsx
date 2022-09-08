@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useScroll, Variants } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import React, { useState } from 'react';
 import { FaLeaf } from 'react-icons/fa';
@@ -15,15 +15,11 @@ function Logo() {
 
 function NavLinks({ inverted }: { inverted: boolean }) {
     return (
-        <motion.div
-            className={clsx(
-                'flex items-center gap-8 px-4 text-base transition-all',
-                inverted ? 'text-primary' : 'text-white'
-            )}>
+        <motion.div className="flex items-center gap-8 px-4 text-base text-white transition-all">
             <a href="#hero">home</a>
             <a>about us</a>
             <a>contact us</a>
-            <button className="w-fit bg-white px-6 py-4  text-black">
+            <button className="w-fit bg-white px-6 py-4 text-black">
                 GET STARTED
             </button>
         </motion.div>
@@ -36,20 +32,24 @@ export function NavSpacer() {
 
 export function NavBar() {
     const lg = useMediaQuery('lg');
-    const { scrollYProgress } = useScroll();
-
+    const { scrollY } = useScroll();
+    const bg = useTransform(
+        scrollY,
+        [0, 0.1, 1],
+        ['#00000000', '#FFFFFF', '#FFFFFF']
+    );
     const [atPageStart, setAtPageStart] = useState(true);
     const [scrollingDown, setScrollingDown] = useState(false);
-    scrollYProgress.onChange((v) => {
+    scrollY.onChange((v) => {
         //console.log(scrollYProgress.getVelocity());
         //TODO: This feels like there should be a better way
-        //setAtPageStart(v < 0.1);
+        setAtPageStart(v < 25);
         //setScrollingDown(v > 0.5 && scrollYProgress.getVelocity() <= 0);
     });
 
     const containerVariants: Variants = {
         transparent: { backgroundColor: '#00000000' },
-        solid: { backgroundColor: '#FFFFFF' },
+        solid: { backgroundColor: '#000' },
         hidden: { opacity: 0 },
         show: { opacity: 1 },
     };
@@ -58,10 +58,7 @@ export function NavBar() {
         <motion.nav
             className="sticky top-0 z-10 flex h-20 w-full items-center justify-between px-4 font-title text-3xl lg:px-12 lg:text-2xl"
             variants={containerVariants}
-            animate={[
-                atPageStart ? 'transparent' : 'transparent',
-                scrollingDown ? 'hidden' : 'show',
-            ]}
+            animate={[atPageStart ? 'transparent' : 'solid']}
             layout>
             <Logo />
             {lg && <NavLinks inverted={!atPageStart} />}

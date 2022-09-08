@@ -76,18 +76,16 @@ function List() {
 
 export function GrowBusiness() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center gap-36 px-12 py-36">
+        <div className="flex min-h-screen flex-col items-center justify-center px-12 py-36 md:gap-36">
             <div className="2xl:text-11xl flex w-full flex-col items-start justify-center  font-title text-4xl font-semibold sm:text-8xl md:text-8xl lg:w-3/4 lg:text-8xl xl:text-9xl">
                 <div>GET YOUR</div>
                 <div className="self-end">VITAMIN C</div>
                 <div className="pl-[10%]">ONLINE</div>
             </div>
-            <div className="grid w-full grid-cols-2 items-center justify-center px-12">
-                <div>
-                    <AnimatedImage className="m-auto h-[36rem] w-fit overflow-clip">
-                        <Image src={orangeWoman} className="h-full w-auto" />
-                    </AnimatedImage>
-                </div>
+            <div className="flex w-full grid-rows-2 flex-col items-center justify-center md:grid md:grid-cols-2 md:grid-rows-1 md:px-12">
+                <AnimatedImage className="m-auto h-auto w-full overflow-clip md:h-[36rem] md:w-fit">
+                    <Image src={orangeWoman} className="h-full w-auto" />
+                </AnimatedImage>
                 <List />
             </div>
         </div>
