@@ -76,7 +76,7 @@ function List() {
 
 export function GrowBusiness() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center gap-36 px-12 py-96">
+        <div className="flex min-h-screen flex-col items-center justify-center gap-36 px-12 py-36">
             <div className="2xl:text-11xl flex w-full flex-col items-start justify-center  font-title text-4xl font-semibold sm:text-8xl md:text-8xl lg:w-3/4 lg:text-8xl xl:text-9xl">
                 <div>GET YOUR</div>
                 <div className="self-end">VITAMIN C</div>
