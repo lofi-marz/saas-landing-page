@@ -41,12 +41,10 @@ export function Hero() {
             <div className="absolute flex h-full w-full flex-col gap-4 bg-gradient-to-b from-[#00000040] to-transparent px-12">
                 <NavSpacer />
                 <h1 className="font-title text-8xl ">
-                    EVERYTHING <br /> TO SELL
-                    <br /> ANYTHING
+                    NUTRITION <br /> AS A SERVICE
                 </h1>
                 <p className="text-3xl font-semibold">
-                    Start your free website trial today. <br /> No credit card
-                    required.
+                    Start your free trial today. <br /> No credit card required.
                 </p>
                 <button className="w-fit bg-white px-10 py-5 text-xl text-black">
                     GET STARTED

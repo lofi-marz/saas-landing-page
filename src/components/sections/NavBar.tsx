@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { motion, useViewportScroll, Variants } from 'framer-motion';
+import { motion, useScroll, Variants } from 'framer-motion';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import React, { useState } from 'react';
 import { FaLeaf } from 'react-icons/fa';
@@ -8,7 +8,7 @@ function Logo() {
     return (
         <div className="flex w-fit items-center justify-center gap-2 text-white">
             <FaLeaf />
-            <div className="font-bold">CHUNKIES</div>
+            <div className="font-bold">CITRUS</div>
         </div>
     );
 }
@@ -36,7 +36,7 @@ export function NavSpacer() {
 
 export function NavBar() {
     const lg = useMediaQuery('lg');
-    const { scrollYProgress } = useViewportScroll();
+    const { scrollYProgress } = useScroll();
 
     const [atPageStart, setAtPageStart] = useState(true);
     const [scrollingDown, setScrollingDown] = useState(false);
