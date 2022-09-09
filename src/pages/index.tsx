@@ -1,21 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
-import {
-    GrowBusiness,
-    Hero,
-    HeroBackground,
-    NavBar,
-} from 'components/sections';
-import herosm from '../components/sections/hero-sm.webp';
-import heromd from '../components/sections/hero-md.webp';
-import herolg from '../components/sections/hero-lg.webp';
-import heroxl from '../components/sections/hero-xl.webp';
-import hero2xl from '../components/sections/hero-2xl.webp';
-import { useClosestMedia } from '../hooks/useClosestMedia';
-import { motion } from 'framer-motion';
-import { fadeInVariants } from '../animations';
-import Image from 'next/future/image';
-import desktop from '../images/site-scroll-desktop-v2.webp';
+import { Create, GrowBusiness, Hero, NavBar } from 'components/sections';
 
 const Home: NextPage = () => {
     return (
@@ -26,6 +11,7 @@ const Home: NextPage = () => {
             <div className="w-full">
                 <Hero />
                 <GrowBusiness />
+                <Create />
             </div>
         </div>
     );
